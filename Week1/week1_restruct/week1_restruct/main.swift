@@ -15,19 +15,26 @@ func makePeperoBar(length: Int) {
     }
 }
 
+func makeToppingPeperoBody(length: Int, topping: String) {
+    for drawtopping in 1...length {
+        if drawtopping % 2 != 0 {
+            print(topping + peperoBodyComponent )
+        } else {
+            print(" " + peperoBodyComponent + topping)
+        }
+    }
+}
+
+func makeNudePeperobody(length: Int) {
+    peperoBodyComponent = "|0|"
+    for _ in 1...length {
+        print(" " + peperoBodyComponent)
+    }
+}
+
 func makeNormalPepero(bodyLength: Int, barLength: Int) {
     makeNormalPeperoBody(length: bodyLength)
     makePeperoBar(length: barLength)
-}
-
-func makeToppingPeperoBody(length: Int, topping: String) {
-    for _ in 1...length {
-        if length/2 != 0 {
-            print(topping + peperoBodyComponent)
-        } else {
-            print(peperoBodyComponent + topping)
-        }
-    }
 }
 
 func makeToppingPepero(topping: String, bodyLength: Int, barLength: Int) {
@@ -35,3 +42,15 @@ func makeToppingPepero(topping: String, bodyLength: Int, barLength: Int) {
     makePeperoBar(length: barLength)
 }
 
+func makeNudePepero(bodylength: Int, barLength: Int) {
+    makeNudePeperobody(length: bodylength)
+    makePeperoBar(length: barLength)
+}
+
+makeNormalPepero(bodyLength: 10, barLength: 4)
+print("_____________________________________")
+makeToppingPepero(topping: "&", bodyLength: 12, barLength: 4)
+print("_____________________________________")
+makeToppingPepero(topping: "#", bodyLength: 12, barLength: 6)
+print("_____________________________________")
+makeNudePepero(bodylength: 6, barLength: 4)
