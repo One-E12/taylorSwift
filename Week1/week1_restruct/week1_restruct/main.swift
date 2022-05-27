@@ -1,7 +1,6 @@
 import Foundation
 
 var peperoBodyComponent = "***"
-var peperoToppingComponent = "&"
 let peperoBarComponent = " | |"
 
 func makeNormalPeperoBody(length: Int) {
@@ -21,4 +20,18 @@ func makeNormalPepero(bodyLength: Int, barLength: Int) {
     makePeperoBar(length: barLength)
 }
 
+func makeToppingPeperoBody(length: Int, topping: String) {
+    for _ in 1...length {
+        if length/2 != 0 {
+            print(topping + peperoBodyComponent)
+        } else {
+            print(peperoBodyComponent + topping)
+        }
+    }
+}
+
+func makeToppingPepero(topping: String, bodyLength: Int, barLength: Int) {
+    makeToppingPeperoBody(length: bodyLength, topping: topping)
+    makePeperoBar(length: barLength)
+}
 
